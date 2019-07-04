@@ -1,3 +1,5 @@
 
 This is to test github
 console.log('hi')
+This is to test github.
+this is the second test
