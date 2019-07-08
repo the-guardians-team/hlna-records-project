@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 // import axios from 'axios'
 // import components
-import Artist from './Artist'
+// import Artist from './Artist'
 
 
  
@@ -32,7 +32,7 @@ class App extends Component {
     //  console.log(this.state.artist)
     return (
       <div className="App">
-        <Artist />
+        {/* <Artist /> */}
         {/* <SearchByTitle />
         <SlideShow />
         <Track /> */}
@@ -48,9 +48,7 @@ class App extends Component {
         {/* <SearchByTitle /> */}
         {/* <SlideShow /> */}
         {this.state.top50Tracks.map(loved => <TopTrack key={loved.idTrack} 
-        tId={loved.idTrack} arId={loved.idArtist} alId={loved.idAlbum} 
-        tName={loved.strTrack} arName={loved.strArtist} alName={loved.strAlbum} 
-        arImg={loved.strTrackThumb} tVid={loved.strMusicVid} />)}
+        loved={loved}/>)}
         {/* artist component will contain <Album /> , and album componenet will contain <Track /> */}
       </div>
     );

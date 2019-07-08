@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import Album from './Album'
+// import Album from './Album'
 // import css
 
 class Artist extends Component {
