@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SearchByTitle from './SearchByTitle'
 // import components
-import Artist from './Artist'
+// import Artist from './Artist'
 
 
  
@@ -29,7 +29,6 @@ class App extends Component {
            )
       )} */}
         </div>
-
       </div>
     );
   }
