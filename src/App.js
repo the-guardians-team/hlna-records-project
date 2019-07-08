@@ -4,13 +4,36 @@ import SearchByTitle from './SearchByTitle'
 // import components
 import Artist from './Artist'
 
-class App extends Component {
+
  
+import TopTrack from './TopTrack'
+import axios from "axios";
+
+class App extends Component {
+  // state ={ key:json file, key:json file, ...}
+  state = {
+    top50Tracks:[]
+  }
+  componentDidMount() {
+    // API calls
+    axios({
+      method: 'get',
+      url: `https://www.theaudiodb.com/api/v1/json/1/mostloved.php?format=track`
+    })
+    .then(response => {
+      console.log(response)
+      const allTrack = response.data.loved
+      this.setState({
+        top50Tracks: allTrack
+      })
+    })
+  }
   render() {
     //  console.log(this.state.artist)
     return (
       <div className="App">
          <SearchByTitle />
+         <TopTrack />
         {/* <SlideShow />
         <Track /> */}
         <div className="card">
@@ -22,9 +45,11 @@ class App extends Component {
            )
       )} */}
         </div>
-        </div>
-
-
+        {/* <SearchByTitle /> */}
+        {/* <SlideShow /> */}
+        
+        {/* artist component will contain <Album /> , and album componenet will contain <Track /> */}
+      </div>
     );
   }
 }
