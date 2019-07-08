@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+// import { Route, Link } from "react-router-dom";
 import axios from 'axios';
 import "./App.css";
 
@@ -26,7 +26,8 @@ class TopAlbums extends Component {
     return (
       <div className="App">
         
-        {this.state.albums.map(loved => <h5>{loved.strAlbum} key={loved.idAlbum} </h5>)}
+        {this.state.albums.map(loved => <div><h5>{loved.strAlbum}  </h5>
+        <img src={loved.strAlbumThumb}/></div>)}
        
       </div>
     );
