@@ -29,6 +29,11 @@ class App extends Component {
            )
       )} */}
         </div>
+        {/* <SearchByTitle /> */}
+        {/* <SlideShow /> */}
+        {this.state.top50Tracks.map(loved => <TopTrack key={loved.idTrack} 
+        loved={loved}/>)}
+        {/* artist component will contain <Album /> , and album componenet will contain <Track /> */}
       </div>
     );
   }
