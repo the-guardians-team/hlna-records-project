@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import SearchByTitle from './SearchByTitle'
+import axios from 'axios';
+// import axios from 'axios'
+import TopAlbums from './TopAlbums'
 // import components
 import Artist from './Artist'
 
@@ -29,7 +32,6 @@ class App extends Component {
     })
   }
   render() {
-    //  console.log(this.state.artist)
     return (
       <div className="App">
          <SearchByTitle />
@@ -51,7 +53,12 @@ class App extends Component {
         {/* artist component will contain <Album /> , and album componenet will contain <Track /> */}
       </div>
     );
+      <div>
+        <TopAlbums />
+      </div>
+    )
   }
+  
 }
 
 export default App;
