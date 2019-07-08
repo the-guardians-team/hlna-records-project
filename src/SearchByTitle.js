@@ -8,7 +8,8 @@ class SearchByTitle extends Component {
     formData: {
       title: '',
       artist:''
-    }
+    },
+    element: ""
   }
 
   handleChange = event => {
@@ -44,12 +45,16 @@ class SearchByTitle extends Component {
     // )
   }
   handleSubmitArtist = event => {
-    this.setState({event: this.state.formData.artist})
+    // this.setState({event: this.state.formData.artist})
     //prevent default action
     event.preventDefault()
     const artist = this.state.formData.artist
-    return <Artist artistName={artist} />
+    this.setState({
+      artistSearch: this.state.formData.artist
+    })
+    // this.setState({element: <Artist artistName={artist} />}) 
   }
+
   handleSubmitTitle = event => {
     this.setState({event: this.state.formData.title})
       //prevent default action
@@ -79,9 +84,10 @@ class SearchByTitle extends Component {
     return( 
 
       <div className="App">
-        <ul>{this.state.tracks.map((track, index) => <li key={index}>{track.name}</li>)}
-        <ul>{this.state.tracks.map((track, index) => <li key={index}>{track.artist}</li>)}</ul>
+        <ul>
+          {this.state.tracks.map((track, index) => <li key={index}>{track.name}: {track.artist}</li>)}
         </ul>
+        {this.state.artistSearch ? <Artist key={this.state.artistSearch} artistName={this.state.artistSearch} /> : ''}
         <form onSubmit={this.handleSubmitTitle}>
           <input
             placeholder="Search by title"
@@ -98,7 +104,6 @@ class SearchByTitle extends Component {
             onChange={this.handleChange}
           />
         </form>
-
 
       </div>
     );
