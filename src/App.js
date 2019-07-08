@@ -1,36 +1,24 @@
 import React, { Component } from "react";
 import "./App.css";
-import SearchByTitle from './SearchByTitle'
-// import axios from 'axios'
-import TopAlbums from './TopAlbums'
+
 // import components
-import Artist from './Artist'
-import TopTrack from './TopTrack'
+import Search from './Search'
+import TopAlbums from './TopAlbums'
+import TopTracks from './TopTracks'
 
 class App extends Component {
-  // state ={ key:json file, key:json file, ...}
 
   render() {
     return (
       <div className="App">
-         <SearchByTitle />
-         <TopTrack />
-        <TopAlbums />
-        {/* <SlideShow />
-        <Track /> */}
-        <div className="card">
-          {/* {this.state.artist.map((artist, index) =>(
-             <Artist
-               artist={artist}
-               key={index}
-             />
-           )
-      )} */}
-        </div>
-        {/* <SearchByTitle /> */}
+        <Search />
         {/* <SlideShow /> */}
-        
-        {/* artist component will contain <Album /> , and album componenet will contain <Track /> */}
+        <div className="card">
+          <h1>Top Tracks</h1>
+          <TopTracks />
+          <h1>Top Albums</h1>
+          <TopAlbums />
+        </div>
       </div>
     );
       

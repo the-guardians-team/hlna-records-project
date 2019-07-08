@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import axios from 'axios'
-class TopTrack extends Component{
+class TopTracks extends Component{
     state = {
         top50Tracks:[]
       }
@@ -32,4 +32,4 @@ class TopTrack extends Component{
     }
 }
 
-export default TopTrack;
+export default TopTracks;

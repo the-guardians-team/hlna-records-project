@@ -1,36 +1,14 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import Album from './TopAlbums'
+import Album from './Album'
 // import css
 
 class Artist extends Component {
   state = {
     artist: {},
-    artistName: "c", // taken from search form
+    artistName: "", // taken from search form
     albums: [] 
   };
-  // getArtist =()=> {
-       
-
-  //   if (!this.state.artistName){
-  //     console.log("no result")
-  //   } else {
-  //   axios({
-  //     method: "get",
-  //     url: `https://www.theaudiodb.com/api/v1/json/195187/search.php?s=${this.state.artistName}`
-  //     //
-  //   })
-  //     .then(response => {
-        
-  //                         console.log(response);
-  //                         const artist =
-  //                           response.data.artists[0];
-  //                         this.setState({ artist });
-                        
-  //                       })
-  //     .catch(error => {});
-  //                     }
-  // }
   componentDidMount() {
     axios({
       method: "get",
@@ -38,31 +16,39 @@ class Artist extends Component {
       //
     })
       .then(response => {
-                          console.log(response);
-                          const artist =
-                            response.data.artists[0];
-                          this.setState({ artist });
-                          //   const artistName = this.props.artist.strArtist.replace(/\s/g, "");
-                          //   this.setState({ artistName });
-                        })
+          console.log(response);
+          const artist =
+            response.data.artists[0];
+          this.setState({ artist });
+          //   const artistName = this.props.artist.strArtist.replace(/\s/g, "");
+          //   this.setState({ artistName });
+
+          
+            this.getArtistAlbums();
+          
+        })
       .catch(error => {});
   }
  
   getArtistAlbums =()=>{
       axios({
         method: "get",
-        url: `https://theaudiodb.com/api/v1/json/195187/searchalbum.php?s=${this.state.artistName}`
+        url: `https://theaudiodb.com/api/v1/json/195187/searchalbum.php?s=${
+          this.state.artist.strArtist
+        }`
       })
-      .then(response=>{
-          console.log(response)
+        .then(response => {
+          console.log(response);
           const albums = response.data.album;
-          console.log(albums)
-          this.setState({albums})
-
-      })
-      .catch(error=>{
-          console.log("error ##########")
-      })
+          console.log(response.data.album);
+          
+          console.log(albums);
+          this.setState({ albums });
+        })
+        .catch(error => {
+          console.log("error ########## albums");
+          console.log(error);
+        });
   }
 
   render() {
@@ -73,8 +59,8 @@ class Artist extends Component {
     // const name = this.props.artistName.replace(/\s/g, "");
 
     // this.setState({ artistName : name });
-    console.log(this.props.artistName)
-    console.log(this.state.artistName)
+    // console.log(this.props.artistName)
+    // console.log(this.state.artistName)
     // this.getArtist()
             // console.log(this.state.artist.strArtistLogo);
              return (
@@ -107,10 +93,10 @@ class Artist extends Component {
                    <a href={this.state.artist.strWebsite}>
                      Artist Website
                    </a>
-                   <p />
+                   
                 {/* <Albums artistName={this.state.artist.name} /> */}
-                   {/* {this.getArtistAlbums()}
-                    {this.state.albums.map(album => <Album key={album.idAlbum} albumId={album.idAlbum}/>)} */}
+                   
+                    {this.state.albums.map(album => <Album key={album.idAlbum} albumId={album.idAlbum}/>)}
 
                    {/* <img
                    src={this.state.artist.strArtistLogo}
@@ -161,3 +147,25 @@ export default Artist;
     // })
 //   }
 
+  // getArtist =()=> {
+       
+
+  //   if (!this.state.artistName){
+  //     console.log("no result")
+  //   } else {
+  //   axios({
+  //     method: "get",
+  //     url: `https://www.theaudiodb.com/api/v1/json/195187/search.php?s=${this.state.artistName}`
+  //     //
+  //   })
+  //     .then(response => {
+        
+  //                         console.log(response);
+  //                         const artist =
+  //                           response.data.artists[0];
+  //                         this.setState({ artist });
+                        
+  //                       })
+  //     .catch(error => {});
+  //                     }
+  // }
