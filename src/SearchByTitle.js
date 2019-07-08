@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios'
-
+import Artist from './Artist'
 class SearchByTitle extends Component {
 
   state = {
@@ -44,12 +44,11 @@ class SearchByTitle extends Component {
     // )
   }
   handleSubmitArtist = event => {
-    
+    this.setState({event: this.state.formData.artist})
     //prevent default action
-    event.preventDefault();
-
-
-  
+    event.preventDefault()
+    const artist = this.state.formData.artist
+    return <Artist artistName={artist} />
   }
   handleSubmitTitle = event => {
     this.setState({event: this.state.formData.title})
