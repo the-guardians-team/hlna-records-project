@@ -12,11 +12,18 @@ class App extends Component {
     return (
       <div className="App">
         <Search />
-        {/* <SlideShow /> */}
+        {/* the form must be always on the top of the page 'All pages', BUT on submit it should direct to 'Search Results Page' */}
         <div className="card">
+        {/* rendered in this page 'Home Page' */}
           <h1>Top Tracks</h1>
+          {/* 
+          when you click on a track it directs you to the 'Track Page'
+           */}
           <TopTracks />
           <h1>Top Albums</h1>
+          {/* 
+          when you click on an album it directs you to the 'Album Page'
+           */}
           <TopAlbums />
         </div>
       </div>

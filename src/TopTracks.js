@@ -21,11 +21,20 @@ class TopTracks extends Component{
         })
       }
     render(){
-        return(
-            <div>
-                {this.state.top50Tracks.map(loved => <Track key={loved.strMusicBrainzID} tId={loved.strMusicBrainzID}/>)}
-            </div>
-        )
+        return (
+          <div>
+            {/* 
+          when you click on a track it directs you to the 'Track Page'
+           */}
+            {this.state.top50Tracks.map(loved => (
+              <Track
+                key={loved.strMusicBrainzID}
+                tId={loved.strMusicBrainzID}
+              />
+            ))}
+          </div>
+        );
+        
     }
 }
 
