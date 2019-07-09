@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from 'axios'
 // import Artist from './Artist'
 import { Link } from "react-router-dom";
+import Artist from './Artist'
+import './styles.css'
 
 class Search extends Component {
 
@@ -96,15 +98,18 @@ class Search extends Component {
         )}
 
         <form onSubmit={this.handleSubmitTitle}>
-          <input
-            placeholder="Search by title"
+        <label for="Search Tracks">Search Track<br /></label>
+          <input class='box'
+        
+            placeholder="Search tracks"
             name="title"
             value={this.state.formData.title}
             onChange={this.handleChange}
           />
         </form>
         <form onSubmit={this.handleSubmitArtist}>
-          <input
+        <label for="Search Tracks">Find Artist<br /></label>
+          <input class='box'
             placeholder="Search by artist"
             name="artist"
             value={this.state.formData.artist}

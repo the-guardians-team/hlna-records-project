@@ -20,9 +20,15 @@ class App extends Component {
 
     const Main = ()=>(
       <div className="App">
+        <header>
+          <h1 className="header">HLNA Records</h1>
+          
         <Search />
         {/* the form must be always on the top of the page 'All pages', BUT on submit it should direct to 'Search Results Page' */}
-        <div>
+        </header>
+       
+        {/* <SlideShow /> */}
+        <div className="card">
           {/* rendered in this page 'Home Page' */}
           <h1>Top Tracks</h1>
           {/* <Route exact path="/" component={App} /> */}

@@ -26,7 +26,7 @@ class TopAlbums extends Component {
   render() {
     //  console.log(this.state.artist)
     return (
-      <div className="App">
+      <div className="AlbumImages">
         {/* 
           DONE
         */}
