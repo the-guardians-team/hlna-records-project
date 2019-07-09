@@ -52,17 +52,6 @@ class Artist extends Component {
   }
 
   render() {
-    //   if (!this.state.artist){ // wait a respected time before rendering if it is in state, if it's in props no need
-    //       return <h2>no result</h2>;
-    //   }
-    
-    // const name = this.props.artistName.replace(/\s/g, "");
-
-    // this.setState({ artistName : name });
-    // console.log(this.props.artistName)
-    // console.log(this.state.artistName)
-    // this.getArtist()
-            // console.log(this.state.artist.strArtistLogo);
              return (
                <div className="Artist">
                  <img
