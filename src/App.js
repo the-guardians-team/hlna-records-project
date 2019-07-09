@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import './style.css'
 import "./App.css";
 import { Route, Link } from "react-router-dom";
 // import components
@@ -20,7 +22,7 @@ class App extends Component {
       <div className="App">
         <Search />
         {/* the form must be always on the top of the page 'All pages', BUT on submit it should direct to 'Search Results Page' */}
-        <div className="card">
+        <div>
           {/* rendered in this page 'Home Page' */}
           <h1>Top Tracks</h1>
           {/* <Route exact path="/" component={App} /> */}
@@ -39,11 +41,12 @@ class App extends Component {
     )
     return (
       <React.Fragment>
-        <Route exact path="/" component={Main} />
+
         <Route exact path="/track/:id" component={Track} />
         <Route exact path="/album/:id" component={Album} />
         <Route exact path="/artist/:name" component={Artist} />
         <Route exact path="/search/:name" component={Search} />
+        <Route exact path="/" component={Main} />
       </React.Fragment>
     );
       

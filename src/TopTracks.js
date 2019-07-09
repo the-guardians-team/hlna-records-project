@@ -2,13 +2,15 @@ import React,{Component} from 'react'
 import axios from 'axios'
 // import Track from './Track'
 import {Link} from 'react-router-dom'
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 // import { Route } from "react-router-dom";
 
 class TopTracks extends Component{
     state = {
         top50Tracks:[],
       }
-      componentDidMount() {
+      componentWillMount() {
         // API calls
         axios({
           method: 'get',
@@ -24,22 +26,21 @@ class TopTracks extends Component{
       }
     render(){
         return (
-          <div>
-            {/* 
-          DONE
-           */}
+          <div className="container">
+          <div className="row">
 
             {this.state.top50Tracks.map(track => (
-              <div>
+              <div className="card col-4">
                 <Link to={`/track/${track.strMusicBrainzID}`}>
-                  <img src={track.strTrackThumb} alt="" />
+                  <img
+                    src={track.strTrackThumb}
+                    className="card-img-top"
+                    alt=""
+                  />
                 </Link>
-                {/* <Track
-                  key={track.strMusicBrainzID}
-                  tId={track.strMusicBrainzID}
-                /> */}
               </div>
             ))}
+            </div>
           </div>
         );
         
