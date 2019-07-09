@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import axios from 'axios'
-import Track from './Track'
+// import Track from './Track'
 import {Link} from 'react-router-dom'
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 
 class TopTracks extends Component{
     state = {
@@ -26,7 +26,7 @@ class TopTracks extends Component{
         return (
           <div>
             {/* 
-          when you click on a track it directs you to the 'Track Page'
+          DONE
            */}
 
             {this.state.top50Tracks.map(track => (
