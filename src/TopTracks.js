@@ -1,8 +1,10 @@
 import React,{Component} from 'react'
 import axios from 'axios'
+import Track from './Track'
+
 class TopTracks extends Component{
     state = {
-        top50Tracks:[]
+        top50Tracks:[],
       }
       componentDidMount() {
         // API calls
@@ -21,12 +23,7 @@ class TopTracks extends Component{
     render(){
         return(
             <div>
-                {this.state.top50Tracks.map(loved =>
-                    <div><h1>{loved.strTrack}</h1>
-                    <img src={loved.strTrackThumb}/>
-                    </div>
-                )}
-                
+                {this.state.top50Tracks.map(loved => <Track key={loved.strMusicBrainzID} tId={loved.strMusicBrainzID}/>)}
             </div>
         )
     }
