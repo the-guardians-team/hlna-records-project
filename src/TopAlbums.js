@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Route, Link } from "react-router-dom";
 import axios from 'axios';
 import "./App.css";
+import Album from './Album'
 
 class TopAlbums extends Component {
   
@@ -16,7 +17,7 @@ class TopAlbums extends Component {
     axios.get(`http://theaudiodb.com/api/v1/json/1/mostloved.php?format=album`)
     .then(res => {
        const albums = res.data.loved
-      console.log(res)
+      // console.log(res)
       // console.log(res)
      this.setState({ albums:albums });
     })
@@ -26,8 +27,9 @@ class TopAlbums extends Component {
     return (
       <div className="App">
         
-        {this.state.albums.map(loved => <div><h5>{loved.strAlbum}  </h5>
-        <img src={loved.strAlbumThumb}/></div>)}
+        {/* {this.state.albums.map(loved => <div><h5>{loved.strAlbum} </h5>
+        <img src={loved.strAlbumThumb}/></div>)} */}
+        {this.state.albums.map(album => <Album key={album.idAlbum} albumId={album.idAlbum} />)}
        
       </div>
     );

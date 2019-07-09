@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 import Artist from './Artist'
-class SearchByTitle extends Component {
+class Search extends Component {
 
   state = {
     tracks: [],
@@ -50,8 +50,8 @@ class SearchByTitle extends Component {
     event.preventDefault()
     const artist = this.state.formData.artist
     this.setState({
-      artistSearch: this.state.formData.artist
-    })
+      artistSearch: artist
+    });
     // this.setState({element: <Artist artistName={artist} />}) 
   }
 
@@ -111,4 +111,4 @@ class SearchByTitle extends Component {
 }
 
 
-export default SearchByTitle;
+export default Search;
