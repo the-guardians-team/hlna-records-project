@@ -2,7 +2,9 @@ import React, { Component } from "react";
 // import { Route, Link } from "react-router-dom";
 import axios from 'axios';
 import "./App.css";
-import Album from './Album'
+// import Album from './Album'
+import { Link } from "react-router-dom";
+
 
 class TopAlbums extends Component {
   
@@ -26,10 +28,13 @@ class TopAlbums extends Component {
     return (
       <div className="App">
         {/* 
-          when you click on an album it directs you to the album page
+          DONE
         */}
         {this.state.albums.map(album => (
-          <Album key={album.idAlbum} albumId={album.idAlbum} />
+          <Link to={`/album/${album.idAlbum}`}>
+            <img src={album.strAlbumThumb} alt="" />
+          </Link>
+          // <Album key={album.idAlbum} albumId={album.idAlbum} />
         ))}
       </div>
     );

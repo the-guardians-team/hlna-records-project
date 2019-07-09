@@ -6,6 +6,10 @@ import Search from './Search'
 import TopAlbums from './TopAlbums'
 import TopTracks from './TopTracks'
 import Track from "./Track";
+import Album from "./Album";
+import Artist from "./Artist";
+
+
 
 
 class App extends Component {
@@ -22,12 +26,12 @@ class App extends Component {
           {/* <Route exact path="/" component={App} /> */}
           
           {/* 
-          when you click on a track it directs you to the 'Track Page'
+          DONE
            */}
           <TopTracks />
           <h1>Top Albums</h1>
           {/* 
-          when you click on an album it directs you to the 'Album Page'
+          DONE
            */}
           <TopAlbums />
         </div>
@@ -37,6 +41,9 @@ class App extends Component {
       <React.Fragment>
         <Route exact path="/" component={Main} />
         <Route exact path="/track/:id" component={Track} />
+        <Route exact path="/album/:id" component={Album} />
+        <Route exact path="/artist/:name" component={Artist} />
+        <Route exact path="/search/:name" component={Search} />
       </React.Fragment>
     );
       
