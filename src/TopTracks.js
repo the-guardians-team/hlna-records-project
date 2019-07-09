@@ -36,10 +36,9 @@ class TopTracks extends Component{
                   <img
                     src={track.strTrackThumb}
                     className="card-img-top"
-                    alt=""/> </Link>
-                  </div>))}
-                  </div>
-          {/* <div className="TrackImages">
+                    alt=""
+                  />
+          <div className="TrackImages">
            
 
           
@@ -54,10 +53,8 @@ class TopTracks extends Component{
                 </Link>
               </div>
             ))}
-            </div> */}
-          
+            </div>
           </div>
-
         );
         
     }
