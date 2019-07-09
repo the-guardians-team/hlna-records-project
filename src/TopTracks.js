@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import axios from 'axios'
 import Track from './Track'
+import {Link} from 'react-router-dom'
+import { Route } from "react-router-dom";
 
 class TopTracks extends Component{
     state = {
@@ -13,7 +15,7 @@ class TopTracks extends Component{
           url: `https://www.theaudiodb.com/api/v1/json/1/mostloved.php?format=track`
         })
         .then(response => {
-          console.log(response)
+          // console.log(response)
           const allTrack = response.data.loved
           this.setState({
             top50Tracks: allTrack
@@ -21,11 +23,26 @@ class TopTracks extends Component{
         })
       }
     render(){
-        return(
-            <div>
-                {this.state.top50Tracks.map(loved => <Track key={loved.strMusicBrainzID} tId={loved.strMusicBrainzID}/>)}
-            </div>
-        )
+        return (
+          <div>
+            {/* 
+          when you click on a track it directs you to the 'Track Page'
+           */}
+
+            {this.state.top50Tracks.map(track => (
+              <div>
+                <Link to={`/track/${track.strMusicBrainzID}`}>
+                  <img src={track.strTrackThumb} alt="" />
+                </Link>
+                {/* <Track
+                  key={track.strMusicBrainzID}
+                  tId={track.strMusicBrainzID}
+                /> */}
+              </div>
+            ))}
+          </div>
+        );
+        
     }
 }
 

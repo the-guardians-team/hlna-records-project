@@ -32,8 +32,10 @@ class Album extends Component {
           <div>
             <p>album name: {this.state.album.strAlbum}</p>
             <p>artist name: {this.state.album.strArtist}</p>
+            {/* 
+            a link to the 'Artist Page' 
+             */}
             <img src={this.state.album.strAlbumThumb} alt="" />
-            
           </div>
         );
     }

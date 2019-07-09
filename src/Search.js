@@ -8,8 +8,7 @@ class Search extends Component {
     formData: {
       title: '',
       artist:''
-    },
-    element: ""
+    }
   }
 
   handleChange = event => {
@@ -26,24 +25,7 @@ class Search extends Component {
       formData: newFormData
     });
   };
-  // state ={ key:json file, key:json file, ...}
 
-  
-  
-  componentDidMount() {
-    // API calls
-    // axios({
-    // method: "get", 
-    // url: 'https://cors-anywhere.herokuapp.com/https://ws.audioscrobbler.com//2.0/?method=track.search&track=Believe&api_key=fa6d7c53999a32c59ed71bb3d371ea07&format=json'
-
-    //  })
-
-    // .then(res => {
-      // console.log(res);
-    //   this.setState({ tracks: res.data.results.trackmatches.track});
-    // }
-    // )
-  }
   handleSubmitArtist = event => {
     // this.setState({event: this.state.formData.artist})
     //prevent default action
@@ -52,7 +34,6 @@ class Search extends Component {
     this.setState({
       artistSearch: artist
     });
-    // this.setState({element: <Artist artistName={artist} />}) 
   }
 
   handleSubmitTitle = event => {
@@ -81,13 +62,27 @@ class Search extends Component {
   }
 
   render() {
-    return( 
-
-      <div className="App">
+    return (
+      <div className="Search">
+        {/* 
+      when a track search result is clicked, it should redirect to the 'Track Page' 
+      on submit artist search should redirect to the 'Artist Page' 
+      */}
         <ul>
-          {this.state.tracks.map((track, index) => <li key={index}>{track.name}: {track.artist}</li>)}
+          {this.state.tracks.map((track, index) => (
+            <li key={index}>
+              {track.name}: {track.artist}
+            </li>
+          ))}
         </ul>
-        {this.state.artistSearch ? <Artist key={this.state.artistSearch} artistName={this.state.artistSearch} /> : ''}
+        {this.state.artistSearch ? (
+          <Artist
+            key={this.state.artistSearch}
+            artistName={this.state.artistSearch}
+          />
+        ) : (
+          ""
+        )}
         <form onSubmit={this.handleSubmitTitle}>
           <input
             placeholder="Search by title"
@@ -104,7 +99,6 @@ class Search extends Component {
             onChange={this.handleChange}
           />
         </form>
-
       </div>
     );
   }
