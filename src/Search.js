@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios'
-import Artist from './Artist'
+// import Artist from './Artist'
+import { Link } from "react-router-dom";
+
 class Search extends Component {
 
   state = {
@@ -69,20 +71,30 @@ class Search extends Component {
       on submit artist search should redirect to the 'Artist Page' 
       */}
         <ul>
+          Search results
           {this.state.tracks.map((track, index) => (
-            <li key={index}>
-              {track.name}: {track.artist}
-            </li>
+            <Link to={`/track/${track.mbid}`}>
+              <li key={index}>
+                {track.name}: {track.artist}
+              </li>
+            </Link>
           ))}
         </ul>
+
         {this.state.artistSearch ? (
-          <Artist
-            key={this.state.artistSearch}
-            artistName={this.state.artistSearch}
-          />
+          <li>
+            <Link to={`/artist/${this.state.artistSearch}`}>
+              {this.state.artistSearch}
+            </Link>
+          </li>
         ) : (
+          // <Artist
+          //   key={this.state.artistSearch}
+          //   artistName={this.state.artistSearch}
+          // />
           ""
         )}
+
         <form onSubmit={this.handleSubmitTitle}>
           <input
             placeholder="Search by title"

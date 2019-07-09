@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import Album from './Album'
+// import Album from './Album'
+import { Link } from "react-router-dom";
+
 // import css
 
 class Artist extends Component {
@@ -12,21 +14,19 @@ class Artist extends Component {
   componentDidMount() {
     axios({
       method: "get",
-      url: `https://www.theaudiodb.com/api/v1/json/195187/search.php?s=${this.props.artistName}`
+      url: `https://www.theaudiodb.com/api/v1/json/195187/search.php?s=${
+        this.props.match.params.name}`
       //
     })
       .then(response => {
-          console.log(response);
-          const artist =
-            response.data.artists[0];
-          this.setState({ artist });
-          //   const artistName = this.props.artist.strArtist.replace(/\s/g, "");
-          //   this.setState({ artistName });
+        console.log(response);
+        const artist = response.data.artists[0];
+        this.setState({ artist });
+        //   const artistName = this.props.artist.strArtist.replace(/\s/g, "");
+        //   this.setState({ artistName });
 
-          
-            this.getArtistAlbums();
-          
-        })
+        this.getArtistAlbums();
+      })
       .catch(error => {});
   }
  
@@ -84,8 +84,13 @@ class Artist extends Component {
                    </a>
                    
                 {/* <Albums artistName={this.state.artist.name} /> */}
-                   
-                    {this.state.albums.map(album => <Album key={album.idAlbum} albumId={album.idAlbum}/>)}
+                   <p>Artist's Albums</p>
+                    {this.state.albums.map(album => (
+                      <Link to={`/album/${album.idAlbum}`}>
+            <img src={album.strAlbumThumb} alt="" />
+          </Link>
+                    ))}
+                    {/* <Album key={album.idAlbum} albumId={album.idAlbum}/> */}
 
                    {/* <img
                    src={this.state.artist.strArtistLogo}
