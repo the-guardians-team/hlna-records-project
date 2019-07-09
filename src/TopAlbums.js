@@ -27,8 +27,6 @@ class TopAlbums extends Component {
     return (
       <div className="App">
         
-        {/* {this.state.albums.map(loved => <div><h5>{loved.strAlbum} </h5>
-        <img src={loved.strAlbumThumb}/></div>)} */}
         {this.state.albums.map(album => <Album key={album.idAlbum} albumId={album.idAlbum} />)}
        
       </div>
