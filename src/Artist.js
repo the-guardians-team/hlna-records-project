@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 // import Album from './Album'
 import { Link } from "react-router-dom";
+import './styles.css'
 
 // import css
 
@@ -38,9 +39,9 @@ class Artist extends Component {
         }`
       })
         .then(response => {
-          console.log(response);
+          // console.log(response);
           const albums = response.data.album;
-          console.log(response.data.album);
+          // console.log(response.data.album);
           
           console.log(albums);
           this.setState({ albums });
@@ -54,46 +55,85 @@ class Artist extends Component {
   render() {
              return (
                <div className="Artist">
-                 <Link to="/">
-                   Home
-                 </Link>
                 
                  <img
                    className="banner"
                    src={this.state.artist.strArtistBanner}
                    alt="no img"
                  />
-
+                 <br/>
+                 <Link to="/"><button type="button" className="btn btn-dark btn-lg btn-block home">
+                   Home
+                 </button></Link>
                  <div className="info">
+                 <div className="Card">
                    <img
-                     className="thumb"
+                     className="thumb cardImg"
                      src={this.state.artist.strArtistThumb}
                      alt="no img"
+                     
                    />
+                   <div>
+                   <h1>
+                     {this.state.artist.strArtist}
+                   </h1>
+                   <h2>Genre</h2>
                    <p>
-                     Artist name :{this.state.artist.strArtist}
+                     {this.state.artist.strGenre}
                    </p>
+                   <h2>Biography</h2>
                    <p>
-                     Artist genre :{this.state.artist.strGenre}
-                   </p>
-                   <p>
-                     Artist Biography :
                      {this.state.artist.strBiographyEN}
                    </p>
+                   <h2>Country</h2>
                    <p>
-                     Artist Country :{this.state.artist.strCountry}
+                     {this.state.artist.strCountry}
                    </p>
+                   <h2>
                    <a href={this.state.artist.strWebsite}>
-                     Artist Website
-                   </a>
-
+                    Website
+                   </a></h2>
+                   </div>
+                   
+                   </div>
+                   <br/><br/><br/>
                    {/* <Albums artistName={this.state.artist.name} /> */}
-                   <p>Artist's Albums</p>
-                   {this.state.albums.map(album => (
-                     <Link to={`/album/${album.idAlbum}`}>
-                       <img src={album.strAlbumThumb} alt="" />
-                     </Link>
-                   ))}
+                   <h2 className='Title'>Albums</h2>
+                   <br/><br/>
+                   <div className="bd-example">
+                   
+        <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
+         
+          <div className="carousel-inner album">
+          {this.state.albums.map((album, index) => (
+            <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
+            <Link to={`/album/${album.idAlbum}`}>
+            {album.strAlbumThumb != null ? (<div>
+          <img src={album.strAlbumThumb}   width="700px" height="700px"/>{album.strAlbumThumb.length ? '':<div class="centered">{album.strAlbum}</div>}</div>): (
+                      <div class="container">
+                        <img
+                          src="http://citasantehnika.lv/content/images/default-image.gif"
+                          className="d-block w-100 image"
+                          alt="IMG" width="700px" height="700px"
+                        />
+                        <div class="centered">{album.strAlbum}</div>
+                      </div>
+                    )}
+          </Link>
+          </div>
+            
+          ))}
+</div>
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
                    {/* <Album key={album.idAlbum} albumId={album.idAlbum}/> */}
 
                    {/* <img
@@ -167,3 +207,7 @@ export default Artist;
   //     .catch(error => {});
   //                     }
   // }
+
+
+
+  

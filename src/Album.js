@@ -57,7 +57,9 @@ getAlbumTracks =()=>{
         // use state to view album info
         return (
           <div>
-            <Link to="/">Home</Link>
+            <Link to="/"><button type="button" className="btn btn-dark btn-lg btn-block home">
+                   Home
+                 </button></Link>
             <p>Album Name: {this.state.album.strAlbum}</p>
             {/* <p>artist name: {this.state.album.strArtist}</p> */}
             {/* 
