@@ -26,11 +26,10 @@ class App extends Component {
         <header>
           <h1 className="header">HLNA Records</h1>
         </header>
+        <div className="image" />
         <div className="container">
           <h1 className="tracks">Top Tracks</h1>
-          <div className="image" />
 
-          
           <TopTracks />
           <br />
 
