@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 // import Album from './Album'
 import { Link } from "react-router-dom";
-import './Artist.css'
+import './styles.css'
 
 // import css
 
@@ -62,36 +62,46 @@ class Artist extends Component {
                    alt="no img"
                  />
                  <br/>
-                 <Link to="/">
+                 <Link to="/"><button type="button" className="btn btn-dark btn-lg btn-block home">
                    Home
-                 </Link>
-
+                 </button></Link>
                  <div className="info">
+                 <div className="Card">
                    <img
-                     className="thumb"
+                     className="thumb cardImg"
                      src={this.state.artist.strArtistThumb}
                      alt="no img"
+                     
                    />
+                   <div>
+                   <h1>
+                     {this.state.artist.strArtist}
+                   </h1>
+                   <h2>Genre</h2>
                    <p>
-                     Artist name :{this.state.artist.strArtist}
+                     {this.state.artist.strGenre}
                    </p>
+                   <h2>Biography</h2>
                    <p>
-                     Artist genre :{this.state.artist.strGenre}
-                   </p>
-                   <p>
-                     Artist Biography :
                      {this.state.artist.strBiographyEN}
                    </p>
+                   <h2>Country</h2>
                    <p>
-                     Artist Country :{this.state.artist.strCountry}
+                     {this.state.artist.strCountry}
                    </p>
+                   <h2>
                    <a href={this.state.artist.strWebsite}>
-                     Artist Website
-                   </a>
-
+                    Website
+                   </a></h2>
+                   </div>
+                   
+                   </div>
+                   <br/><br/><br/>
                    {/* <Albums artistName={this.state.artist.name} /> */}
-                   <p>Artist's Albums</p>
+                   <h2 className='Title'>Albums</h2>
+                   <br/><br/>
                    <div className="bd-example">
+                   
         <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
          
           <div className="carousel-inner album">

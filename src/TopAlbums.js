@@ -21,12 +21,10 @@ class TopAlbums extends Component {
   }
   render() {
     return (
-      <div
-        id="carouselExampleCaptions"
-        className="carousel slide"
-        data-ride="carousel"
-      >
-        <div className="carousel-inner album">
+      
+        <div id="album" className="carousel slide" data-ride="carousel">
+         
+          <div className="carousel-inner album">
           {this.state.albums.map((album, index) => (
             <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
               <Link to={`/album/${album.idAlbum}`}>
@@ -38,27 +36,19 @@ class TopAlbums extends Component {
               </Link>
             </div>
           ))}
+
+          </div>
+          <a class="carousel-control-prev" href="#album" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#album" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleCaptions"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true" />
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleCaptions"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true" />
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    );
+        
+    )
  
     }
   }
