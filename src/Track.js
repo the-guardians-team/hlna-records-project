@@ -28,7 +28,7 @@ class Track extends Component {
       <div className='singleTracks'>
         <Link to="/">Home</Link>
 
-        <h1>this is track page</h1>
+        {/* <h1>this is track page</h1> */}
       
         {/* <h1>this is track page</h1> */}
         {/* {this.props.match.params.id} */}
