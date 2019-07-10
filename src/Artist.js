@@ -11,7 +11,7 @@ class Artist extends Component {
     artistName: "", // taken from search form
     albums: [] 
   };
-  componentDidMount() {
+  componentWillMount() {
     axios({
       method: "get",
       url: `https://www.theaudiodb.com/api/v1/json/195187/search.php?s=${
@@ -54,6 +54,10 @@ class Artist extends Component {
   render() {
              return (
                <div className="Artist">
+                 <Link to="/">
+                   Home
+                 </Link>
+                
                  <img
                    className="banner"
                    src={this.state.artist.strArtistBanner}
@@ -82,15 +86,15 @@ class Artist extends Component {
                    <a href={this.state.artist.strWebsite}>
                      Artist Website
                    </a>
-                   
-                {/* <Albums artistName={this.state.artist.name} /> */}
+
+                   {/* <Albums artistName={this.state.artist.name} /> */}
                    <p>Artist's Albums</p>
-                    {this.state.albums.map(album => (
-                      <Link to={`/album/${album.idAlbum}`}>
-            <img src={album.strAlbumThumb} alt="" />
-          </Link>
-                    ))}
-                    {/* <Album key={album.idAlbum} albumId={album.idAlbum}/> */}
+                   {this.state.albums.map(album => (
+                     <Link to={`/album/${album.idAlbum}`}>
+                       <img src={album.strAlbumThumb} alt="" />
+                     </Link>
+                   ))}
+                   {/* <Album key={album.idAlbum} albumId={album.idAlbum}/> */}
 
                    {/* <img
                    src={this.state.artist.strArtistLogo}

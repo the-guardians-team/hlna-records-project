@@ -6,7 +6,7 @@ class Track extends Component {
   state = {
     track: ""
   };
-  componentDidMount(){
+  componentWillMount(){
       axios({
           method: 'get',
           url:`https://theaudiodb.com/api/v1/json/195187/track-mb.php?i=${this.props.match.params.id}`
@@ -20,6 +20,8 @@ class Track extends Component {
   render() {
     return (
       <div>
+        <Link to="/">Home</Link>
+
         <h1>this is track page</h1>
         {/* {this.props.match.params.id} */}
         <p>{this.state.track.strTrack}</p>

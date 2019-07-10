@@ -11,7 +11,7 @@ class Album extends Component {
         album: {},
         tracks: []
     }
-    componentDidMount(){
+    componentWillMount(){
         // album id is passed as props
         //api call to get an album using album id
         axios({
@@ -57,6 +57,7 @@ getAlbumTracks =()=>{
         // use state to view album info
         return (
           <div>
+            <Link to="/">Home</Link>
             <p>album name: {this.state.album.strAlbum}</p>
             {/* <p>artist name: {this.state.album.strArtist}</p> */}
             {/* 
@@ -73,7 +74,6 @@ getAlbumTracks =()=>{
                 <img src={track.strTrackThumb} alt="" />
               </Link>
             ))}
-
           </div>
         );
             }
