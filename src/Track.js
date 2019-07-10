@@ -26,17 +26,16 @@ class Track extends Component {
     return (
              
       <div className='singleTracks'>
-<<<<<<< HEAD
+
         <Link to="/"><button type="button" className="btn btn-dark btn-lg btn-block home">
                    Home
                  </button></Link>
-=======
+
         <Link to="/">Home</Link>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> added some bootstrap
-=======
->>>>>>> track c changed picture
+
+
+
+
 
 
 
