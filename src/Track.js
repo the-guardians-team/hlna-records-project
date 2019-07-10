@@ -13,26 +13,41 @@ class Track extends Component {
       })
       .then(response => {
           console.log(response)
+          if(response.data.track != null){
           this.setState({
-              track: response.data.track[0]})
+              track: response.data.track[0]}) 
+          }
+           
       })
   }
   render() {
+    console.log(!this.state.track)
+    if (this.state.track){
     return (
-      <div>
+             
+      <div className='singleTracks'>
         <Link to="/">Home</Link>
 
         <h1>this is track page</h1>
+      
+        {/* <h1>this is track page</h1> */}
         {/* {this.props.match.params.id} */}
+      
+        
+
         <p>{this.state.track.strTrack}</p>
 
         <img src={this.state.track.strTrackThumb} alt="" />
 
         <Link to={`/artist/${this.state.track.strArtist}`}>
-          <p>artist name: {this.state.track.strArtist}</p>
+          <p>{this.state.track.strArtist}</p>
         </Link>
-      </div>
-    );
+        
+     
+     </div>
+    )} else {
+      return (<p>not found</p>)
+    }
   }
 }
 export default Track;

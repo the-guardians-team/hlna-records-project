@@ -6,6 +6,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 // import { Route } from "react-router-dom";
 
+
 class TopTracks extends Component{
     state = {
         top50Tracks:[],
@@ -28,20 +29,22 @@ class TopTracks extends Component{
         return (
           <div className="container">
           <div className="row">
-
+          
             {this.state.top50Tracks.map(track => (
-              <div className="card col-4">
+              <div className="card TrackImages">
                 <Link to={`/track/${track.strMusicBrainzID}`}>
                   <img
                     src={track.strTrackThumb}
                     className="card-img-top"
                     alt=""
                   />
-                </Link>
-              </div>
-            ))}
-            </div>
+                  </Link>
           </div>
+                  ))}
+         
+          </div>
+          </div>
+
         );
         
     }
