@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 // import Album from './Album'
 import { Link } from "react-router-dom";
+import './Artist.css'
 
 // import css
 
@@ -54,15 +55,16 @@ class Artist extends Component {
   render() {
              return (
                <div className="Artist">
-                 <Link to="/">
-                   Home
-                 </Link>
                 
                  <img
                    className="banner"
                    src={this.state.artist.strArtistBanner}
                    alt="no img"
                  />
+                 <br/>
+                 <Link to="/">
+                   Home
+                 </Link>
 
                  <div className="info">
                    <img
@@ -97,7 +99,7 @@ class Artist extends Component {
             <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
             <Link to={`/album/${album.idAlbum}`}>
             {album.strAlbumThumb != null ? (<div>
-          <img src={album.strAlbumThumb}   width="700px" height="700px"/>{album.strAlbumThumb === null ? <div class="centered">{album.strAlbum}</div>:""}</div>): (
+          <img src={album.strAlbumThumb}   width="700px" height="700px"/>{album.strAlbumThumb.length ? '':<div class="centered">{album.strAlbum}</div>}</div>): (
                       <div class="container">
                         <img
                           src="http://citasantehnika.lv/content/images/default-image.gif"
