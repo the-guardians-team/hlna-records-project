@@ -38,9 +38,9 @@ class Artist extends Component {
         }`
       })
         .then(response => {
-          console.log(response);
+          // console.log(response);
           const albums = response.data.album;
-          console.log(response.data.album);
+          // console.log(response.data.album);
           
           console.log(albums);
           this.setState({ albums });
@@ -89,11 +89,29 @@ class Artist extends Component {
 
                    {/* <Albums artistName={this.state.artist.name} /> */}
                    <p>Artist's Albums</p>
-                   {this.state.albums.map(album => (
-                     <Link to={`/album/${album.idAlbum}`}>
-                       <img src={album.strAlbumThumb} alt="" />
-                     </Link>
-                   ))}
+                   <div className="bd-example">
+        <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
+         
+          <div className="carousel-inner album">
+          {this.state.albums.map((album, index) => (
+            <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
+            <Link to={`/album/${album.idAlbum}`}>
+          <img src={album.strAlbumThumb} width="700" height="700"/>
+          </Link>
+          </div>
+            
+          ))}
+</div>
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
                    {/* <Album key={album.idAlbum} albumId={album.idAlbum}/> */}
 
                    {/* <img
@@ -167,3 +185,7 @@ export default Artist;
   //     .catch(error => {});
   //                     }
   // }
+
+
+
+  
