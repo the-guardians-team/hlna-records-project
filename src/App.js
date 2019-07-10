@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import $ from "jquery";
+import Popper from 'popper.js';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import './style.css'
 import "./App.css";
 import { Route, Link } from "react-router-dom";
@@ -20,8 +23,14 @@ class App extends Component {
 
     const Main = ()=>(
       <div className="App">
+        <header>
+          <h1 className="header">HLNA Records</h1>
+          
         <Search />
         {/* the form must be always on the top of the page 'All pages', BUT on submit it should direct to 'Search Results Page' */}
+        </header>
+       
+        {/* <SlideShow /> */}
         <div>
           {/* rendered in this page 'Home Page' */}
           <h1>Top Tracks</h1>
