@@ -38,7 +38,7 @@ class TopTracks extends Component{
                     {track.strTrackThumb != null ? (
                       <img
                         src={track.strTrackThumb}
-                        className="d-block w-100 image"
+                        className="d-block w-100"
                         alt="NO IMG"
                       />
                     ) : (
