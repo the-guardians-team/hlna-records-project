@@ -29,32 +29,22 @@ class TopTracks extends Component{
         return (
           <div className="container">
           <div className="row">
-
+          
             {this.state.top50Tracks.map(track => (
-              <div className="card col-4">
+              <div className="card TrackImages">
                 <Link to={`/track/${track.strMusicBrainzID}`}>
                   <img
                     src={track.strTrackThumb}
                     className="card-img-top"
                     alt=""
                   />
-          <div className="TrackImages">
-           
-
-          
-
-            {this.state.top50Tracks.map(track => (
-              <div >
-                <Link to={`/track/${track.strMusicBrainzID}`}>
-                
-              
-                  <img src={track.strTrackThumb} alt="" />
-                 
-                </Link>
-              </div>
-            ))}
-            </div>
+                  </Link>
           </div>
+                  ))}
+         
+          </div>
+          </div>
+
         );
         
     }
