@@ -27,16 +27,15 @@ class App extends Component {
           <h1 className="header">HLNA Records</h1>
         </header>
         <div className="container">
-          {/* img / records company*/}
+          <h1 className="tracks">Top Tracks</h1>
+          <div className="image" />
 
-            <h1 className='tracks'>Top Tracks</h1>
-            <TopTracks />
           
+          <TopTracks />
           <br />
-          
-            <h1 className='albums'>Top Albums</h1>
-            <TopAlbums />
-          
+
+          <h1 className="albums">Top Albums</h1>
+          <TopAlbums />
           <br />
           <Search />
         </div>
