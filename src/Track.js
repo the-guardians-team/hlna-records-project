@@ -35,13 +35,6 @@ class Track extends Component {
 
 
 
-
-
-
-
-        {/* <h1>this is track page</h1> */}
-        <h1>this is track page</h1>
-
       
         {/* <h1>this is track page</h1> */}
         {/* {this.props.match.params.id} */}
