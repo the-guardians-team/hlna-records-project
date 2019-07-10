@@ -20,6 +20,7 @@ import Artist from "./Artist";
 
 class App extends Component {
 
+
   render() {
 
     const Main = () => (

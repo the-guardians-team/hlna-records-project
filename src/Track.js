@@ -33,15 +33,16 @@ class Track extends Component {
 =======
         <Link to="/">Home</Link>
 <<<<<<< HEAD
->>>>>>> added some bootstrap
-
 <<<<<<< HEAD
+>>>>>>> added some bootstrap
+=======
+>>>>>>> track c changed picture
+
+
+
         {/* <h1>this is track page</h1> */}
-=======
-=======
->>>>>>> added some bootstrap
         <h1>this is track page</h1>
->>>>>>> added some bootstrap
+
       
         {/* <h1>this is track page</h1> */}
         {/* {this.props.match.params.id} */}

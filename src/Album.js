@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Track from './Track'
 import {Link} from "react-router-dom";
 
 
@@ -62,9 +63,8 @@ getAlbumTracks =()=>{
                  </button></Link>
             <p>Album Name: {this.state.album.strAlbum}</p>
             {/* <p>artist name: {this.state.album.strArtist}</p> */}
-            {/* 
-            DONE 
-             */}
+             
+ 
             <Link to={`/artist/${this.state.album.strArtist}`}>
               <p>Artist Name: {this.state.album.strArtist}</p>
             </Link>
@@ -81,6 +81,7 @@ getAlbumTracks =()=>{
               }}> 
                 <p>{track.strTrack}</p>
                 
+>>>>>>> track c changed picture
               </Link>
             ))}
           </div>
