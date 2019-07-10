@@ -86,12 +86,9 @@ class Search extends Component {
         )}
 
         <form onSubmit={this.handleSubmitTitle}>
-          <label for="Search Tracks">
-            Search Track
-            <br />
-          </label>
-          <input
-            class="box"
+        <label for="Search Tracks"><br /></label>
+          <input class='box'
+        
             placeholder="Search tracks"
             name="title"
             value={this.state.formData.title}
@@ -99,13 +96,9 @@ class Search extends Component {
           />
         </form>
         <form onSubmit={this.handleSubmitArtist}>
-          <label for="Search Tracks">
-            Find Artist
-            <br />
-          </label>
-          <input
-            class="box"
-            placeholder="Search by artist"
+        <label for="Search Tracks"><br /></label>
+          <input class='box'
+            placeholder="Find Artist"
             name="artist"
             value={this.state.formData.artist}
             onChange={this.handleChange}
