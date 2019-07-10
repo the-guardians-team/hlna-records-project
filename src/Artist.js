@@ -96,7 +96,17 @@ class Artist extends Component {
           {this.state.albums.map((album, index) => (
             <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
             <Link to={`/album/${album.idAlbum}`}>
-          <img src={album.strAlbumThumb} width="700" height="700"/>
+            {album.strAlbumThumb != null ? (<div>
+          <img src={album.strAlbumThumb}   width="700px" height="700px"/>{album.strAlbumThumb === null ? <div class="centered">{album.strAlbum}</div>:""}</div>): (
+                      <div class="container">
+                        <img
+                          src="http://citasantehnika.lv/content/images/default-image.gif"
+                          className="d-block w-100 image"
+                          alt="IMG" width="700px" height="700px"
+                        />
+                        <div class="centered">{album.strAlbum}</div>
+                      </div>
+                    )}
           </Link>
           </div>
             
