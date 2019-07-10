@@ -34,7 +34,13 @@ class TopTracks extends Component{
                     index === 0 ? "active" : ""
                   }`}
                 >
-                  <Link to={`/track/${track.strMusicBrainzID}`}>
+                  <Link to={{
+                    pathname:`/track/${track.strMusicBrainzID}`,
+                    state:{
+                      image:track.strTrackThumb
+                    }
+                  }}>
+
                     {track.strTrackThumb != null ? (
                       <img
                         src={track.strTrackThumb}
@@ -43,14 +49,16 @@ class TopTracks extends Component{
                       />
                     ) : (
                       <div class="container">
-                        <img
+                        { <img
                           src="http://citasantehnika.lv/content/images/default-image.gif"
                           className="d-block w-100 image"
                           alt="IMG"
-                        />
+                        /> }
+
                         <div class="centered">{track.strTrack}</div>
                       </div>
                     )}
+                    
                   </Link>
                 </div>
               ))}
