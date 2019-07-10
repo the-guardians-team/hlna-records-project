@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios'
-// import Artist from './Artist'
 import { Link } from "react-router-dom";
-import Artist from './Artist'
-import './styles.css'
 
 class Search extends Component {
 
@@ -55,8 +52,6 @@ class Search extends Component {
        })
   
       .then(response =>{
-        console.log(response);
-
         this.setState({
         tracks: response.data.results.trackmatches.track
         })
@@ -68,27 +63,20 @@ class Search extends Component {
   render() {
     return (
       <div className="Search">
-        {/* 
-      when a track search result is clicked, it should redirect to the 'Track Page' 
-      on submit artist search should redirect to the 'Artist Page' 
-      */}
         <ul>
-          Search results
           {this.state.tracks.map((track, index) => (
-            <Link to={`/track/${track.mbid}`}>
-              <li key={index}>
+            <li key={index}>
+              <Link to={`/track/${track.mbid}`}>
                 {track.name}: {track.artist}
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
         </ul>
 
         {this.state.artistSearch ? (
-          <li>
-            <Link to={`/artist/${this.state.artistSearch}`}>
-              {this.state.artistSearch}
-            </Link>
-          </li>
+          <Link to={`/artist/${this.state.artistSearch}`}>
+            {this.state.artistSearch}
+          </Link>
         ) : (
           // <Artist
           //   key={this.state.artistSearch}
@@ -98,9 +86,12 @@ class Search extends Component {
         )}
 
         <form onSubmit={this.handleSubmitTitle}>
-        <label for="Search Tracks">Search Track<br /></label>
-          <input class='box'
-        
+          <label for="Search Tracks">
+            Search Track
+            <br />
+          </label>
+          <input
+            class="box"
             placeholder="Search tracks"
             name="title"
             value={this.state.formData.title}
@@ -108,8 +99,12 @@ class Search extends Component {
           />
         </form>
         <form onSubmit={this.handleSubmitArtist}>
-        <label for="Search Tracks">Find Artist<br /></label>
-          <input class='box'
+          <label for="Search Tracks">
+            Find Artist
+            <br />
+          </label>
+          <input
+            class="box"
             placeholder="Search by artist"
             name="artist"
             value={this.state.formData.artist}
