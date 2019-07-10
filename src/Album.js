@@ -58,17 +58,17 @@ getAlbumTracks =()=>{
         return (
           <div>
             <Link to="/">Home</Link>
-            <p>album name: {this.state.album.strAlbum}</p>
+            <p>Album Name: {this.state.album.strAlbum}</p>
             {/* <p>artist name: {this.state.album.strArtist}</p> */}
             {/* 
             DONE 
              */}
             <Link to={`/artist/${this.state.album.strArtist}`}>
-              <p>artist name: {this.state.album.strArtist}</p>
+              <p>Artist Name: {this.state.album.strArtist}</p>
             </Link>
             <img src={this.state.album.strAlbumThumb} alt="" />
 
-            <p>Albums's Tracks</p>
+            <p>Albums' Tracks</p>
             {this.state.tracks.map(track => (
               <Link to={`/track/${track.strMusicBrainzID}`}> 
                 {track.strTrackThumb == null? (<p> {track.strTrack}</p>)

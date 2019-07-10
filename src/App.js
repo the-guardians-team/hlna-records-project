@@ -29,12 +29,12 @@ class App extends Component {
         <div className="container">
           {/* img / records company*/}
 
-            <h1>Top Tracks</h1>
+            <h1 className='tracks'>Top Tracks</h1>
             <TopTracks />
           
           <br />
           
-            <h1>Top Albums</h1>
+            <h1 className='albums'>Top Albums</h1>
             <TopAlbums />
           
           <br />

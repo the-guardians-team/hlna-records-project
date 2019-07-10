@@ -1,10 +1,13 @@
 .Search{
     font-family: "Times New Roman", Times, serif;
     color: black;
-    font-size: 25px;
+    font-size: 15px;
     text-align: right;
     word-wrap: break-word;
-    margin-right:12%;
+    /* margin-right:12%; */
+    text-align: -webkit-center;
+    padding-bottom: 7%;
+
     
 
 }
@@ -22,7 +25,16 @@
   
 }
 
+.tracks{
+  padding-bottom: 5%;
+  padding-top: 6%;
+}
 
+.albums{
+  padding-bottom: 7%;
+  margin-top: 2%;
+  
+}
 
 
 .TrackImages{
@@ -45,23 +57,28 @@
   
 
 .App, h1{
-    font-family: "Times New Roman", Times, serif;
+   font-family: "Lucida Console", Monaco, monospace;
     text-align: center;
     color: black;
     font-size: 50px;
+    margin-bottom: 2.5%;
+    text-align: center;
   }
 
   body{
-    background: #D87965;
+    background: #974444;
   }
    
   .box{
     margin: 20px auto;
-    background-color: #DC644B;
+    background-color: rgb(132, 72, 72, 0.5);
     height: 20px;
     border: none;
     border-radius: 4px;
-    width: 10%;
+    width: 15%;
+    text-align: center;
+    color:black;
+    font-family: "Lucida Console", Monaco, monospace;
     
   }
 
@@ -100,4 +117,8 @@ img.container {
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+li{
+  list-style-type: none;
 }
