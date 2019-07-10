@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "54f69bf6218ca0b434946405b5146649",
+    "revision": "4447289b6eb9633e775d60560f38a2f8",
     "url": "/hlna-records-project/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hlna-records-project/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "126405a37ccc44112502",
+    "revision": "2db14d378f85a43ba7cc",
     "url": "/hlna-records-project/static/css/main.7970b391.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hlna-records-project/static/js/2.3bd55b67.chunk.js"
   },
   {
-    "revision": "126405a37ccc44112502",
-    "url": "/hlna-records-project/static/js/main.3437e6a6.chunk.js"
+    "revision": "2db14d378f85a43ba7cc",
+    "url": "/hlna-records-project/static/js/main.bcf1a40a.chunk.js"
   },
   {
     "revision": "9666fa6fba9e5780f5e2",
