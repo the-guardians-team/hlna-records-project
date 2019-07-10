@@ -23,7 +23,7 @@ class TopTracks extends Component{
     render(){
         return (
           <div
-            id="carouselExampleCaptions"
+            id="track"
             className="carousel slide"
             data-ride="carousel"
           >
@@ -65,7 +65,7 @@ class TopTracks extends Component{
             </div>
             <a
               class="carousel-control-prev"
-              href="#carouselExampleCaptions"
+              href="#track"
               role="button"
               data-slide="prev"
             >
@@ -77,7 +77,7 @@ class TopTracks extends Component{
             </a>
             <a
               class="carousel-control-next"
-              href="#carouselExampleCaptions"
+              href="#track"
               role="button"
               data-slide="next"
             >

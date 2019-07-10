@@ -3,7 +3,7 @@ import $ from "jquery";
 import Popper from 'popper.js';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
-import './styles.css'
+import './style.css'
 import "./App.css";
 import { Route, Link } from "react-router-dom";
 // import components

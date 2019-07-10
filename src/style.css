@@ -1,29 +1,22 @@
 .Search{
     font-family: "Times New Roman", Times, serif;
-    /* color: black; */
+    color: black;
     font-size: 15px;
     text-align: right;
     word-wrap: break-word;
     /* margin-right:12%; */
     text-align: -webkit-center;
     padding-bottom: 7%;
-    padding-top: 4%;
-    border: black 2px solid;  
-    background-color: black;
-    padding: 60px;
+
     
-    
-   
 
 }
-
-
 
 .singleTracks{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 40%;
     font-family: "Times New Roman", Times, serif;
     font-size: 25px;
     text-align: center;
@@ -37,19 +30,10 @@
   padding-top: 6%;
 }
 
-.albums {
-  /* padding-bottom: 7%; */
-  margin-top: 5%;
-  padding-bottom: -1%;
-  margin-bottom: 5px;
-
+.albums{
+  padding-bottom: 7%;
+  margin-top: 2%;
   
-  
-}
-
-.albums h1{
-  
-  margin-top: 10px;
 }
 
 
@@ -68,8 +52,6 @@
     flex: 33.33%;
     padding: 5px;
     
-    
-    
 }
 
   
@@ -81,7 +63,6 @@
     font-size: 50px;
     margin-bottom: 2.5%;
     text-align: center;
-
   }
 
   body{
@@ -90,19 +71,19 @@
    
   .box{
     margin: 20px auto;
+    background-color: rgb(132, 72, 72, 0.5);
     height: 20px;
     border: none;
     border-radius: 4px;
-    width: 25%;
+    width: 15%;
     text-align: center;
-    /* color:black; */
+    color:black;
     font-family: "Lucida Console", Monaco, monospace;
     
   }
 
   .header{
     padding: 60px;
-    margin: 0;
     text-align: center;
     background: black;
     color: white;
@@ -119,7 +100,6 @@
     font-variant: small-caps;
     text-transform: none;
     text-align: center;
-    padding-bottom: 5px;
   }
 
   .album{
@@ -141,35 +121,4 @@ img.container {
 
 li{
   list-style-type: none;
-}
-.image{
-  background-image: url("./imageheader.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
-  width: 100%;
-  height: 500px ;
-  
-}
-.banner{
-    width: 100%;
-    margin: 0%;
-  }
-.Card{
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
-}
-.cardImg{
-  margin: 0px 30px 30px 30px;
-  max-width: 500px;
-  max-height: 500px;
-}
-.Title{
- text-align: center;
-}
-.home{
-  font-size: 3em;
-  color: white;
-  margin-bottom: 3%;
 }

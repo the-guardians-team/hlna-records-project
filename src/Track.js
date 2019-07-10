@@ -26,7 +26,9 @@ class Track extends Component {
     return (
              
       <div className='singleTracks'>
-        <Link to="/">Home</Link>
+        <Link to="/"><button type="button" className="btn btn-dark btn-lg btn-block home">
+                   Home
+                 </button></Link>
 
         {/* <h1>this is track page</h1> */}
       
