@@ -89,7 +89,7 @@ class Search extends Component {
         <label for="Search Tracks"><br /></label>
           <input class='box'
         
-            placeholder="Search tracks"
+            placeholder="Search Tracks"
             name="title"
             value={this.state.formData.title}
             onChange={this.handleChange}
