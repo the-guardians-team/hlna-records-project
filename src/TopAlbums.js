@@ -12,7 +12,7 @@ class TopAlbums extends Component {
   componentWillMount() {
     // API calls
 
-    axios.get(`http://theaudiodb.com/api/v1/json/1/mostloved.php?format=album`)
+    axios.get(`https://theaudiodb.com/api/v1/json/1/mostloved.php?format=album`)
     .then(res => {
        const albums = res.data.loved
      this.setState({ albums:albums });
