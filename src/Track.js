@@ -31,7 +31,7 @@ class Track extends Component {
                    Home
                  </button></Link>
 
-        <Link to="/">Home</Link>
+        
 
 
 
