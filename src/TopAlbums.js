@@ -17,6 +17,7 @@ class TopAlbums extends Component {
        const albums = res.data.loved
      this.setState({ albums:albums });
     })
+    .catch(error=> console.log(error))
   }
   render() {
     return (
