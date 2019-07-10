@@ -88,3 +88,16 @@
   .album{
     text-align: -webkit-center;
   }
+  /* Container holding the image and the text */
+img.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
