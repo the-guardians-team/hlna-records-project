@@ -1,11 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios'
-// import Track from './Track'
 import {Link} from 'react-router-dom'
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./style.css";
-// import { Route } from "react-router-dom";
-
 
 class TopTracks extends Component{
     state = {
@@ -18,7 +14,6 @@ class TopTracks extends Component{
           url: `https://www.theaudiodb.com/api/v1/json/1/mostloved.php?format=track`
         })
         .then(response => {
-          // console.log(response)
           const allTrack = response.data.loved
           this.setState({
             top50Tracks: allTrack
@@ -27,24 +22,64 @@ class TopTracks extends Component{
       }
     render(){
         return (
-          <div className="container">
-          <div className="row">
-          
-            {this.state.top50Tracks.map(track => (
-              <div className="card TrackImages">
-                <Link to={`/track/${track.strMusicBrainzID}`}>
-                  <img
-                    src={track.strTrackThumb}
-                    className="card-img-top"
-                    alt=""
-                  />
+          <div
+            id="carouselExampleCaptions"
+            className="carousel slide"
+            data-ride="carousel"
+          >
+            <div className="carousel-inner album">
+              {this.state.top50Tracks.map((track, index) => (
+                <div
+                  className={`carousel-item ${
+                    index === 0 ? "active" : ""
+                  }`}
+                >
+                  <Link to={`/track/${track.strMusicBrainzID}`}>
+                    {track.strTrackThumb != null ? (
+                      <img
+                        src={track.strTrackThumb}
+                        className="d-block w-100 image"
+                        alt="NO IMG"
+                      />
+                    ) : (
+                      <div class="container">
+                        <img
+                          src="http://citasantehnika.lv/content/images/default-image.gif"
+                          className="d-block w-100 image"
+                          alt="IMG"
+                        />
+                        <div class="centered">{track.strTrack}</div>
+                      </div>
+                    )}
                   </Link>
+                </div>
+              ))}
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleCaptions"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleCaptions"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-                  ))}
-         
-          </div>
-          </div>
-
         );
         
     }
