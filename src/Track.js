@@ -36,9 +36,8 @@ class Track extends Component {
         
 
         <p>{this.state.track.strTrack}</p>
-
-        <img src={this.state.track.strTrackThumb} alt="" />
-
+        
+        {this.state.track.strTrackThumb ? <img src={this.state.track.strTrackThumb} alt="" /> : <img src={this.props.location.state.image} alt="" /> }
         <Link to={`/artist/${this.state.track.strArtist}`}>
           <p>{this.state.track.strArtist}</p>
         </Link>
