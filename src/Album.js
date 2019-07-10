@@ -70,9 +70,15 @@ getAlbumTracks =()=>{
 
             <p>Albums' Tracks</p>
             {this.state.tracks.map(track => (
-              <Link to={`/track/${track.strMusicBrainzID}`}> 
-                {track.strTrackThumb == null? (<p> {track.strTrack}</p>)
-                : (<img src={track.strTrackThumb} alt="" />)}
+              <Link to={{
+
+                pathname: `/track/${track.strMusicBrainzID}`,
+                state: {
+                  image: this.state.album.strAlbumThumb
+                }
+              }}> 
+                <p>{track.strTrack}</p>
+                
               </Link>
             ))}
           </div>
