@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Track from './Track'
 import {Link} from "react-router-dom";
 
 
@@ -60,18 +61,22 @@ getAlbumTracks =()=>{
             <Link to="/"><button type="button" className="btn btn-dark btn-lg btn-block home">
                    Home
                  </button></Link>
-            <p>Album Name: {this.state.album.strAlbum}</p>
+                 <div>
+                 <h5 class='card-title'> {this.state.album.strAlbum}</h5>
             {/* <p>artist name: {this.state.album.strArtist}</p> */}
             {/* 
             DONE 
              */}
             <Link to={`/artist/${this.state.album.strArtist}`}>
-              <p>Artist Name: {this.state.album.strArtist}</p>
+              <h5 class='card-title' id='art' > {this.state.album.strArtist}</h5>
             </Link>
-            <img src={this.state.album.strAlbumThumb} alt="" />
-
-            <p>Albums' Tracks</p>
+            <img className="thumb cardImg" src={this.state.album.strAlbumThumb} alt="" />
+             </div>
+             <div className='tr'>
+               <br />
+            <h3 class='title'>Tracks</h3>
             {this.state.tracks.map(track => (
+
               <Link to={{
 
                 pathname: `/track/${track.strMusicBrainzID}`,
@@ -79,11 +84,18 @@ getAlbumTracks =()=>{
                   image: this.state.album.strAlbumThumb
                 }
               }}> 
-                <p>{track.strTrack}</p>
+                <p class='list'>{track.strTrack}</p>
                 
+
               </Link>
             ))}
-          </div>
+          </div></div>
+
+            
+    
+         
+          
+
         );
             }
             

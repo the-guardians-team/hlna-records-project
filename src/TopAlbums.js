@@ -29,7 +29,7 @@ class TopAlbums extends Component {
             <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
               <Link to={`/album/${album.idAlbum}`}>
                 <img
-                  src={album.strAlbumThumb}
+                    src={album.strAlbumThumb}
                   className="d-block w-100"
                   alt="NO IMG"
                 />

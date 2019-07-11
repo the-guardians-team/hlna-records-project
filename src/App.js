@@ -13,11 +13,13 @@ import TopTracks from './TopTracks'
 import Track from "./Track";
 import Album from "./Album";
 import Artist from "./Artist";
+//import Nav from "./Nav";
 
 
 
 
 class App extends Component {
+
 
   render() {
 
@@ -36,6 +38,7 @@ class App extends Component {
           <h1 className="albums">Top Albums</h1>
           <TopAlbums />
           <br />
+          <h1 className="albums">Search</h1>
           <Search />
         </div>
       </div>

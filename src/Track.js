@@ -26,28 +26,23 @@ class Track extends Component {
     return (
              
       <div className='singleTracks'>
+
         <Link to="/"><button type="button" className="btn btn-dark btn-lg btn-block home">
                    Home
                  </button></Link>
 
-        {/* <h1>this is track page</h1> */}
-      
-        {/* <h1>this is track page</h1> */}
-        {/* {this.props.match.params.id} */}
-      
         
-
-        <p>{this.state.track.strTrack}</p>
-        
-        {this.state.track.strTrackThumb ? <img src={this.state.track.strTrackThumb} alt="" /> : <img src={this.props.location.state.image} alt="" /> }
+      
+        <p class='card-title'>{this.state.track.strTrack}</p> 
         <Link to={`/artist/${this.state.track.strArtist}`}>
-          <p>{this.state.track.strArtist}</p>
+          <h5 class='card-title' id='art'>{this.state.track.strArtist}</h5>
         </Link>
         
-     
+        {this.state.track.strTrackThumb ? <img src={this.state.track.strTrackThumb} alt="" /> : <img src={this.props.location.state.image} alt="" /> }
+             
      </div>
     )} else {
-      return (<p>not found</p>)
+      return (<div className="notfound">not found</div>)
     }
   }
 }
