@@ -35,7 +35,7 @@ HLNA Records is an informative website, providing users for an alternative metho
 - Manipulating props while using react routs
 
 ### Project Demo
-
+[HLNA Records](https://the-guardians-team.github.io/hlna-records-project/#/)
 
 
 
