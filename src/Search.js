@@ -64,9 +64,15 @@ class Search extends Component {
     return (
       <div className="Search">
         <ul>
+     
           {this.state.tracks.map((track, index) => (
             <li key={index}>
-              <Link to={`/track/${track.mbid}`}>
+              <Link to={{
+                pathname: `/track/${track.mbid}`,
+              state: {
+                image: track.image[2]["#text"]
+              }
+            }}>
                 {track.name}: {track.artist}
               </Link>
             </li>

@@ -32,26 +32,17 @@ class Track extends Component {
                  </button></Link>
 
         
-
-
-
       
-        {/* <h1>this is track page</h1> */}
-        {/* {this.props.match.params.id} */}
-      
-        
-
-        <p class='card-title'>{this.state.track.strTrack}</p>
-        
-        {this.state.track.strTrackThumb ? <img src={this.state.track.strTrackThumb} alt="" /> : <img src={this.props.location.state.image} alt="" /> }
+        <p class='card-title'>{this.state.track.strTrack}</p> 
         <Link to={`/artist/${this.state.track.strArtist}`}>
           <h5 class='card-title' id='art'>{this.state.track.strArtist}</h5>
         </Link>
         
-     
+        {this.state.track.strTrackThumb ? <img src={this.state.track.strTrackThumb} alt="" /> : <img src={this.props.location.state.image} alt="" /> }
+             
      </div>
     )} else {
-      return (<p>not found</p>)
+      return (<div className="notfound">not found</div>)
     }
   }
 }

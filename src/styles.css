@@ -186,6 +186,7 @@ li{
   width: 25em;
   color:
   rgba(255, 252, 232, 1);
+  text-align: center;
 }
 h5#art {
   font-style: oblique;
@@ -274,3 +275,11 @@ p {
   color: rgba(255, 252, 232, 1);
 }
 
+.notfound{
+  background-image: url("./notfound.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  width: 100%;
+  height: 400px;
+}

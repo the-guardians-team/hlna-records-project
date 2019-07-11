@@ -62,18 +62,19 @@ getAlbumTracks =()=>{
                    Home
                  </button></Link>
                  <div>
-                 <h5 class='card-title'>Album Name: {this.state.album.strAlbum}</h5>
+                 <h5 class='card-title'> {this.state.album.strAlbum}</h5>
             {/* <p>artist name: {this.state.album.strArtist}</p> */}
             {/* 
             DONE 
              */}
             <Link to={`/artist/${this.state.album.strArtist}`}>
-              <h5 class='card-title' id='art' >Artist Name: {this.state.album.strArtist}</h5>
+              <h5 class='card-title' id='art' > {this.state.album.strArtist}</h5>
             </Link>
             <img className="thumb cardImg" src={this.state.album.strAlbumThumb} alt="" />
              </div>
              <div className='tr'>
-            <h5 class='title'>Albums' Tracks</h5>
+               <br />
+            <h3 class='title'>Tracks</h3>
             {this.state.tracks.map(track => (
 
               <Link to={{
