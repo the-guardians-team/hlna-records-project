@@ -1,4 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ![GA Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) 
+
+# HLNA Records
+
+Third project of the web development immersive course offered by GA 
+
+## Project Description
+
+HLNA Records is an informative website, providing users for an alternative method of seeking rich music information of artists, tracks, and albums.
+
+## Planning
+### User Stories
+
+**User must be able to:**
+- View albums
+- View tracks
+- Search tracks
+- and find artists
+
+## Technologies Used
+- React 
+- Bootstrap with react 
+- Ajax (axios) for API
+
+## APIs Used
+**Two differinet APIs used in combine** : 
+- **Last.fm API** : to search tracks and get thier information.
+- **Theaudiodb API** : to fetch artists, albums and tracks info. 
+
+## Highlights
+
+**Challenges & Lessons Learned:**
+- Working with two different APIs 
+- Working with react bootstrap was a challenge for the team 
+- Manipulating props while using react routs
+
+### Project Demo
+[HLNA Records](https://the-guardians-team.github.io/hlna-records-project/#/)
+
+
+
+
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -65,4 +107,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
