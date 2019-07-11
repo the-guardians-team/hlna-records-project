@@ -73,7 +73,7 @@ class Artist extends Component {
                      alt="no img"
                      
                    />
-                   <div>
+                   <div id='bio'>
                    <h1>
                      {this.state.artist.strArtist}
                    </h1>
@@ -90,7 +90,7 @@ class Artist extends Component {
                      {this.state.artist.strCountry}
                    </p>
                    <h2>
-                   <a href={this.state.artist.strWebsite}>
+                   <a id='web' href={this.state.artist.strWebsite}>
                     Website
                    </a></h2>
                    </div>

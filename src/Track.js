@@ -41,11 +41,11 @@ class Track extends Component {
       
         
 
-        <p>{this.state.track.strTrack}</p>
+        <p class='card-title'>{this.state.track.strTrack}</p>
         
         {this.state.track.strTrackThumb ? <img src={this.state.track.strTrackThumb} alt="" /> : <img src={this.props.location.state.image} alt="" /> }
         <Link to={`/artist/${this.state.track.strArtist}`}>
-          <p>{this.state.track.strArtist}</p>
+          <h5 class='card-title' id='art'>{this.state.track.strArtist}</h5>
         </Link>
         
      

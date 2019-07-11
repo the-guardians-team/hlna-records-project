@@ -38,6 +38,7 @@ class App extends Component {
           <h1 className="albums">Top Albums</h1>
           <TopAlbums />
           <br />
+          <h1 className="albums">Search</h1>
           <Search />
         </div>
       </div>
