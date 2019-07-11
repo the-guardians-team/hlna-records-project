@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hlna-records-project/precache-manifest.a18317da4c8723b581ca0514d2b30533.js"
+  "/hlna-records-project/precache-manifest.f4af7b36b747ca937d35595ad47de41f.js"
 );
 
 self.addEventListener('message', (event) => {
